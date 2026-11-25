@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "brand": "누아로움",
+    "brandEn": "NOUAROUM",
+    "tagline": "HERITAGE FINE JEWELRY",
+    "updated": "2026-11-26",
+    "numbering": "NR-{CAT}-{NNN} — CAT은 WB(웨딩밴드)·EG(약혼반지)·SL(솔리테어)·CR(커플링), NNN은 001부터 중복 없이",
+    "imageSpec": "1086x1448 (3:4 세로), 순백 스튜디오 배경, JPEG q92, 파일명 = 제품코드-01.jpg",
+    "note": "1차 시안용 예시 데이터입니다. 실제 제품 사진·스펙은 아틀리에 촬영본과 실측값으로 교체하세요."
+  },
+  "categories": [
+    {
+      "id": "wedding-band",
+      "en": "WEDDING BAND",
+      "kr": "웨딩밴드",
+      "prefix": "NR-WB",
+      "desc": "두 사람의 매일이 되는 반지. 폭과 마감을 손에 맞춰 정합니다."
+    },
+    {
+      "id": "engagement",
+      "en": "ENGAGEMENT",
+      "kr": "약혼반지",
+      "prefix": "NR-EG",
+      "desc": "스톤과 밴드의 비례를 다듬어, 빛이 가장 자연스러운 각도로 앉힙니다."
+    },
+    {
+      "id": "solitaire",
+      "en": "SOLITAIRE",
+      "kr": "솔리테어",
+      "prefix": "NR-SL",
+      "desc": "스톤 하나로 완성하는 가장 단순한 형태의 반지."
+    },
+    {
+      "id": "couple-ring",
+      "en": "COUPLE RING",
+      "kr": "커플링",
+      "prefix": "NR-CR",
+      "desc": "두 개의 반지를 한 쌍으로 맞추는 커플링. 각인과 소재를 함께 정합니다."
+    }
+  ],
+  "products": [
+    {
+      "code": "NR-EG-001",
+      "category": "engagement",
+      "title": "빛결",
+      "titleEn": "BITGYEOL",
+      "metal": "PT950 플래티넘",
+      "stone": "라운드 브릴리언트 0.30ct · 밴드 파베 0.15ct",
+      "image": "assets/products/nr-eg-001-01.jpg",
+      "gallery": ["assets/products/nr-eg-001-01.jpg", "assets/products/nr-eg-001-02.jpg"],
+      "description": "가는 파베 밴드가 스톤을 감싸듯 흐르는 약혼반지. 정면에서 스톤이 가장 크게 보이도록 밴드 각도를 잡았고, 웨딩밴드와 겹쳐 착용해도 간섭이 적습니다.",
+      "options": ["화이트골드 / 로즈골드 선택", "밴드 폭 1.7mm · 2.0mm", "스톤 사이즈 조정 상담"],
+      "featured": true
+    },
+    {
+      "code": "NR-WB-001",
+      "category": "wedding-band",
+      "title": "이슬",
+      "titleEn": "ISEUL",
+      "metal": "PT950 플래티넘",
+      "stone": "파베 세팅 0.15ct",
+      "image": null,
+      "gallery": [],
+      "description": "밴드 전면에 작은 스톤을 고르게 앉힌 웨딩밴드. 손가락이 길어 보이는 2.0mm 폭으로 기본 세공합니다.",
+      "options": ["폭 1.7mm / 2.0mm / 2.4mm", "유광 · 무광 마감"],
+      "featured": false
+    },
+    {
+      "code": "NR-WB-002",
+      "category": "wedding-band",
+      "title": "고요",
+      "titleEn": "GOYO",
+      "metal": "18K 화이트골드",
+      "stone": "없음 (무광 밴드)",
+      "image": null,
+      "gallery": [],
+      "description": "스톤 없이 마감만으로 완성하는 무광 웨딩밴드. 손에 닿는 면을 매끄럽게 다듬어 착용감을 우선했습니다.",
+      "options": ["무광 · 헤어라인 마감", "각인 무료"],
+      "featured": false
+    },
+    {
+      "code": "NR-WB-003",
+      "category": "wedding-band",
+      "title": "여울",
+      "titleEn": "YEOUL",
+      "metal": "PT950 플래티넘",
+      "stone": "밀그레인 장식",
+      "image": null,
+      "gallery": [],
+      "description": "테두리에 밀그레인 장식을 둘러 빛을 잔잔하게 나누는 밴드. 클래식한 비례를 그대로 살폈습니다.",
+      "options": ["폭 2.0mm / 2.6mm", "유광 마감"],
+      "featured": false
+    },
+    {
+      "code": "NR-SL-001",
+      "category": "solitaire",
+      "title": "새김",
+      "titleEn": "SAEGIM",
+      "metal": "PT950 플래티넘",
+      "stone": "라운드 브릴리언트 0.50ct",
+      "image": null,
+      "gallery": [],
+      "description": "스톤 하나만 남긴 솔리테어. 프롱을 최소화해 스톤 자체의 형태가 도드라지도록 세팅합니다.",
+      "options": ["4프롱 / 6프롱", "스톤 사이즈 상담"],
+      "featured": false
+    },
+    {
+      "code": "NR-SL-002",
+      "category": "solitaire",
+      "title": "달빛",
+      "titleEn": "DALBIT",
+      "metal": "18K 로즈골드",
+      "stone": "라운드 브릴리언트 0.40ct",
+      "image": null,
+      "gallery": [],
+      "description": "로즈골드가 스톤의 투명도를 부드럽게 받쳐 주는 솔리테어. 밴드를 가늘게 잡아 데일리 착용에 맞췄습니다.",
+      "options": ["밴드 폭 1.5mm / 1.8mm", "각인 무료"],
+      "featured": false
+    },
+    {
+      "code": "NR-CR-001",
+      "category": "couple-ring",
+      "title": "온기",
+      "titleEn": "ONGI",
+      "metal": "PT950 플래티넘",
+      "stone": "없음 (유광 밴드)",
+      "image": null,
+      "gallery": [],
+      "description": "두 사람의 손에 같은 곡선을 옮긴 커플링. 안쪽 면을 둥글게 다듬어 오래 껴도 부담이 적습니다.",
+      "options": ["유광 · 무광", "안쪽 각인 (한글·영문·숫자)"],
+      "featured": false
+    },
+    {
+      "code": "NR-CR-002",
+      "category": "couple-ring",
+      "title": "숨결",
+      "titleEn": "SUMKYEOL",
+      "metal": "18K 옐로골드 + 화이트골드",
+      "stone": "없음",
+      "image": null,
+      "gallery": [],
+      "description": "두 가지 금색을 한 쌍으로 나눠 쓰는 커플링. 서로 다른 색이지만 폭과 곡선은 같게 맞춥니다.",
+      "options": ["색 조합 선택", "폭 2.2mm / 3.0mm"],
+      "featured": false
+    }
+  ]
+}
