@@ -77,7 +77,7 @@ def build_photos():
         print("photo", dest.name, im.size, dest.stat().st_size)
 
     # OG image 1200x630: white studio panel + romanced lockup
-    og = Image.new("RGB", (1200, 630), "#FAFAFA")
+    og = Image.new("RGB", (1200, 630), "#F9F9F9")
     ring = Image.open(pairs[0][0]).convert("RGB")
     h = 590
     w = int(ring.width * h / ring.height)
