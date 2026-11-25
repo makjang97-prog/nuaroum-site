@@ -239,13 +239,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ------------------------------------------------------- placeholder art */
 .ph{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  background:var(--paper-3);overflow:hidden;
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  background:radial-gradient(120% 90% at 50% 42%,#fdfdfc 0%,#f7f7f5 58%,#f2f1ee 100%);overflow:hidden;
 }
 .cat__frame .ph,.card__frame .ph{position:absolute}
 .ph__rings{position:absolute;inset:0;display:block}
 .ph__rings::before{
-  content:"";position:absolute;left:50%;top:50%;width:56%;aspect-ratio:1;transform:translate(-50%,-50%);
+  content:"";position:absolute;left:50%;top:50%;width:70%;aspect-ratio:1;transform:translate(-50%,-50%);
   border:1px solid #ebe8e3;border-radius:50%;
 }
 .ph__rings::after{
@@ -256,6 +256,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   position:relative;font-family:var(--display);font-size:clamp(18px,1.7vw,24px);
   letter-spacing:.22em;text-indent:.22em;color:#565049;
 }
+.ph__name{
+  position:relative;font-family:var(--serif);font-size:13.5px;letter-spacing:.04em;color:#7a736a;
+}
+.card__frame .ph__code{font-size:16px;letter-spacing:.18em}
+.card__frame .ph__name{font-size:13px}
 .ph__label{
   position:absolute;bottom:14px;left:0;right:0;text-align:center;
   font-family:var(--sans);font-size:8px;letter-spacing:.24em;color:#bdb6ad;
@@ -272,7 +277,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .chip:hover{border-color:var(--ink)}
 .chip.is-active{background:var(--ink);border-color:var(--ink);color:#fff}
 
-.grid-products{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,3.4vw,44px) clamp(12px,1.6vw,22px)}
+.grid-products{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(26px,3.4vw,44px) clamp(10px,1.4vw,20px)}
 .card{display:block;text-align:left;opacity:0;transform:translateY(10px);animation:cardIn .8s var(--ease) forwards}
 @keyframes cardIn{to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.card{animation:none;opacity:1;transform:none}}
@@ -288,7 +293,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .card:hover .card__view,.card:focus-visible .card__view{opacity:1;transform:none}
 .card__body{padding-top:15px;display:grid;gap:5px}
 .card__code{font-family:var(--sans);font-size:9px;letter-spacing:.2em;color:var(--gold)}
-.card__title{font-family:var(--serif);font-weight:300;font-size:16px;letter-spacing:.02em;line-height:1.4}
+.card__title{font-family:var(--serif);font-weight:300;font-size:15.5px;letter-spacing:.02em;line-height:1.4}
 .card__spec{font-size:11px;letter-spacing:.01em;color:var(--muted);line-height:1.6}
 .grid-empty{grid-column:1/-1;padding:40px 0;color:var(--muted);font-size:13px}
 .catalog__note{margin-top:clamp(32px,4vw,52px);font-size:11.5px;line-height:1.9;color:#a8a199}
@@ -384,6 +389,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .modal__note{margin-top:14px;font-size:10.5px;color:#a8a199}
 
 /* ----------------------------------------------------------- responsive */
+@media (max-width:1240px){
+  .grid-products{grid-template-columns:repeat(3,1fr)}
+}
 @media (max-width:1180px){
   .cats{grid-template-columns:repeat(2,1fr)}
   .grid-products{grid-template-columns:repeat(2,1fr)}

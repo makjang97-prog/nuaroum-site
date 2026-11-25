@@ -34,7 +34,7 @@
   };
 
   /* --------------------------------------------------------- placeholders */
-  function placeholder(code, label) {
+  function placeholder(code, label, name) {
     const wrap = document.createElement('div');
     wrap.className = 'ph';
 
@@ -50,7 +50,14 @@
     labelEl.className = 'ph__label';
     labelEl.textContent = label || 'PHOTO IN PREPARATION';
 
-    wrap.append(rings, codeEl, labelEl);
+    wrap.append(rings, codeEl);
+    if (name) {
+      const nameEl = document.createElement('span');
+      nameEl.className = 'ph__name';
+      nameEl.textContent = name;
+      wrap.append(nameEl);
+    }
+    wrap.append(labelEl);
     return wrap;
   }
 
@@ -193,7 +200,7 @@
         img.height = 1448;
         frame.append(img);
       } else {
-        frame.append(placeholder(p.code, 'PHOTO IN PREPARATION'));
+        frame.append(placeholder(p.code, 'PHOTO IN PREPARATION', p.title));
       }
 
       const view = document.createElement('span');
