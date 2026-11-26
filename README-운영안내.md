@@ -15,8 +15,25 @@ title: "누아로움(NOUAROUM) 홈페이지 — 배포·운영 안내"
 | Vercel 프로젝트 | `nuaroum-site` — 팀 `maisonyoung`, Hobby(무료) |
 | 소스 폴더 | `documents/nuaroum-site/` (저장소 루트 = 사이트 루트) |
 | 첫 배포 | 2026-11-26 04:2x KST (`a437fed`) |
-| 정식 도메인 | `nuaroum.com` / `nuaroum.co.kr` — 가비아 가상계좌 38,500원 입금 후 연결 |
+| 정식 도메인 | **`nuaroum.com`** (대표) · `nuaroum.co.kr` — 2026-11-26 가비아 등록(만기 2027-11-26). Vercel 연결 완료, **가비아 DNS 입력만 남음**(2026-11-26) |
 | 작업 가이드 | `클로드_누아로움_작업가이드.md` (클로드에게 그대로 전달) |
+
+## 1-1. 오픈 준비중 상태 (2026-11-26 적용)
+
+지금은 **외부에 시안이 공개되지 않는 상태**입니다.
+
+- 일반 방문자(`nuaroum.com`·`nuaroum.co.kr`·`nuaroum-site.vercel.app`)에게는 **`NOUAROUM / 누아로움 / COMING SOON`** 화면만 보입니다. 카탈로그·제품·연락처는 전부 숨겨집니다(원본 HTML은 지우지 않고 그대로 보존).
+- **내부 검수용 프리뷰**: 주소 뒤에 **`?preview=atelier`** 를 붙여 접속하면 그 탭에서만 1차 시안이 열립니다(`https://nuaroum.com/?preview=atelier`). 프리뷰는 탭을 닫으면 사라집니다.
+- 검색엔진 차단: `robots.txt` → `Disallow: /`, `index.html` → `<meta name="robots" content="noindex, nofollow">`.
+- 증빙: `coming-soon-2026-11-26.png`.
+
+### 정식 오픈 때 되돌릴 곳 (3군데)
+
+1. `index.html` — `<meta name="robots" content="noindex, nofollow">` 줄 삭제, `<!-- ===== 오픈 준비중 게이트 ... -->` 주석이 가리키는 `<script>`·`<style>` 블록 삭제, `<body>` 안의 `<div id="gate">` 삭제
+2. `robots.txt` — `Allow: /` 와 `Sitemap: https://nuaroum.com/sitemap.xml` 되살리기
+3. `script.js` — 첫머리의 `if (document.documentElement.classList.contains('gate-on')) return;` 두 줄 삭제
+
+> 주의: 지금 방식은 화면을 가리는 소프트 게이트입니다(소스를 직접 내려받으면 코드는 보임). 완전 차단이 필요하면 Vercel 유료(Pro)의 Password Protection 또는 별도 접속 인증이 필요합니다.
 
 ## 2. 고치는 방법
 
@@ -51,8 +68,9 @@ git push        # → Vercel 자동 배포 30초~1분
 2. **예약 채널** — 네이버 예약/카카오톡 채널 개설 후 링크 연결.
 3. **제품 사진·스펙** — 현재 `NR-EG-001`만 실사진, 나머지는 플레이스홀더 + 예시 스펙.
    `클로드_누아로움_작업가이드.md` 7번 프롬프트로 채웁니다.
-4. **커스텀 도메인** — `nuaroum.com` 입금 확인 후 Vercel Domains 연결,
-   연결 후 `canonical`·`og:url`·`robots.txt`·`sitemap.xml` 주소 교체.
+4. **커스텀 도메인** — 2026-11-26 1단계 완료: 가비아 등록(`nuaroum.com`·`nuaroum.co.kr`, 38,500원 결제 확인, 만기 2027-11-26) → Vercel Domains 연결(`nuaroum.com` Production, 나머지 3개 308 → `nuaroum.com`) → `canonical`·`og:url`·`sitemap.xml`을 `https://nuaroum.com/` 으로 교체.
+   **남은 것: 가비아 DNS 레코드 입력** — `A @ 216.198.79.1`, `CNAME www a053b4b28d7a66b1.vercel-dns-017.com.` 을 `.com`·`.co.kr` 두 도메인 모두에 추가(나중에 PC에서 진행하기로 함, 2026-11-26). 저장하면 10~60분 내 `Valid Configuration`·SSL 자동 발급.
+5. **오픈 준비중 해제** — 위 1-1절 "정식 오픈 때 되돌릴 곳" 참고.
 5. **정책 문구 확인** — `평생 케어·폴리싱`, `SINCE 2026` 표기는 실제 운영 기준 확인 후 확정.
 
 ## 5. 검증 기록 (2026-11-26, 실배포 기준)
