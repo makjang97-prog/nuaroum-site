@@ -10,12 +10,12 @@ title: "누아로움(NOUAROUM) 홈페이지 — 배포·운영 안내"
 
 | 항목 | 값 |
 |---|---|
-| 접속 주소 | **https://nuaroum-site.vercel.app** |
+| 접속 주소 | **https://nuaroum.com** (정식 · `nuaroum.co.kr`·`www`는 308 리다이렉트) · https://nuaroum-site.vercel.app (Vercel 기본 주소) |
 | GitHub | https://github.com/makjang97-prog/nuaroum-site (public) |
 | Vercel 프로젝트 | `nuaroum-site` — 팀 `maisonyoung`, Hobby(무료) |
 | 소스 폴더 | `documents/nuaroum-site/` (저장소 루트 = 사이트 루트) |
 | 첫 배포 | 2026-11-26 04:2x KST (`a437fed`) |
-| 정식 도메인 | **`nuaroum.com`** (대표) · `nuaroum.co.kr` — 2026-11-26 가비아 등록(만기 2027-11-26). Vercel 연결 완료, **가비아 DNS 입력만 남음**(2026-11-26) |
+| 정식 도메인 | **`nuaroum.com`** (대표) · `nuaroum.co.kr` — 2026-11-26 가비아 등록(만기 2027-11-26). **가비아 DNS 설정·Vercel `Valid Configuration`·SSL 발급·실접속까지 완료**(2026-11-26 18:49~18:52, 4-1절) |
 | 작업 가이드 | `클로드_누아로움_작업가이드.md` (클로드에게 그대로 전달) |
 
 ## 1-1. 오픈 준비중 상태 (2026-11-26 적용)
@@ -68,13 +68,32 @@ git push        # → Vercel 자동 배포 30초~1분
 2. **예약 채널** — 네이버 예약/카카오톡 채널 개설 후 링크 연결.
 3. **제품 사진·스펙** — 현재 `NR-EG-001`만 실사진, 나머지는 플레이스홀더 + 예시 스펙.
    `클로드_누아로움_작업가이드.md` 7번 프롬프트로 채웁니다.
-4. **커스텀 도메인** — 2026-11-26 1단계 완료: 가비아 등록(`nuaroum.com`·`nuaroum.co.kr`, 38,500원 결제 확인, 만기 2027-11-26) → Vercel Domains 연결(`nuaroum.com` Production, 나머지 3개 308 → `nuaroum.com`) → `canonical`·`og:url`·`sitemap.xml`을 `https://nuaroum.com/` 으로 교체.
-   **남은 것: 가비아 DNS 레코드 입력** — `A @ 216.198.79.1`, `CNAME www a053b4b28d7a66b1.vercel-dns-017.com.` 을 `.com`·`.co.kr` 두 도메인 모두에 추가(나중에 PC에서 진행하기로 함, 2026-11-26). 저장하면 10~60분 내 `Valid Configuration`·SSL 자동 발급.
-5. **오픈 준비중 해제** — 위 1-1절 "정식 오픈 때 되돌릴 곳" 참고.
+4. **커스텀 도메인 — 완료(2026-11-26 18:52)** — 가비아 등록(`nuaroum.com`·`nuaroum.co.kr`, 38,500원 결제 확인, 만기 2027-11-26) → Vercel Domains 연결(`nuaroum.com` Production, 나머지 3개 308 → `nuaroum.com`) → `canonical`·`og:url`·`sitemap.xml`을 `https://nuaroum.com/` 으로 교체 → **가비아 DNS 레코드 입력·저장 완료**(4-1절). 네 도메인 모두 `Valid Configuration`, SSL 자동 발급, 실접속 확인.
+
+### 4-1. 가비아 DNS 설정 내역 (2026-11-26 18:49·18:51 KST 저장)
+
+가비아 DNS 관리(`dns.gabia.com`, 계정 `메종영 님` / 네이버 `weddingjjang` 연동)에서 두 도메인 모두 **레코드 0개 → 아래 2개**로 설정했습니다. 네임서버는 가비아 기본(`ns.gabia.co.kr`).
+
+| 도메인 | 타입 | 호스트 | 값/위치 | TTL | 저장 시각 |
+|---|---|---|---|---|---|
+| nuaroum.com | A | `@` | `216.198.79.1` | 600 | 18:49:16 |
+| nuaroum.com | CNAME | `www` | `a053b4b28d7a66b1.vercel-dns-017.com.` | 600 | 18:49:16 |
+| nuaroum.co.kr | A | `@` | `216.198.79.1` | 600 | 18:51:02 |
+| nuaroum.co.kr | CNAME | `www` | `a053b4b28d7a66b1.vercel-dns-017.com.` | 600 | 18:51:02 |
+
+- 가비아 입력 화면에서 CNAME 값의 끝점(`.`)도 그대로 저장·수용됩니다(끝점 없이 넣어도 무방).
+- 레코드 저장 후 Vercel Domains에서 각 도메인 `Refresh` → `nuaroum.com`·`www.nuaroum.com`·`nuaroum.co.kr`·`www.nuaroum.co.kr` 모두 **Valid Configuration**. (`www.nuaroum.com`은 첫 새로고침 때 `Proxy Status Unknown`이 한 번 떴고 재시도에서 정상으로 바뀜)
+- 전파 확인(구글 DNS-over-HTTPS, 권한 NS 응답): `nuaroum.com A 216.198.79.1`, `www.nuaroum.com CNAME a053b4b28d7a66b1.vercel-dns-017.com.`, `.co.kr` 동일.
+- 실접속: `https://nuaroum.com` **200**(COMING SOON), `https://www.nuaroum.com`·`https://nuaroum.co.kr`·`https://www.nuaroum.co.kr` **308 → https://nuaroum.com/**, `https://nuaroum.com/?preview=atelier` 200(1차 시안 열림). SSL 인증서 자동 발급 완료.
+- 증빙: `gabia-dns-saved-2026-11-26.png`(가비아 저장 결과 두 도메인), `vercel-domains-valid-2026-11-26.png`(Vercel 4개 도메인 Valid), `nuaroum-com-preview-2026-11-26.png`(실도메인 1차 시안).
+
+> DNS를 다시 손댈 때: 위 표의 2줄만 있으면 됩니다. 가비아 기본 파킹/포워딩 레코드가 되살아나면 `A @`·`www`를 덮어쓰세요.
+5. **오픈 준비중 해제** — 위 1-1절 "정식 오픈 때 되돌릴 곳" 참고. (해제하면 `https://nuaroum.com`이 바로 1차 시안으로 공개됩니다)
 5. **정책 문구 확인** — `평생 케어·폴리싱`, `SINCE 2026` 표기는 실제 운영 기준 확인 후 확정.
 
 ## 5. 검증 기록 (2026-11-26, 실배포 기준)
 
+- 커스텀 도메인(18:52): 4개 도메인 Vercel `Valid Configuration`, `https://nuaroum.com` 200 / 나머지 3개 308 → `nuaroum.com`, `?preview=atelier` 정상, HTTPS 인증서 발급 완료
 - HTTP 200: `/`, `/styles.css`, `/script.js`, `/products.json`, 사진 2장, `/assets/map.jpg`,
   `/assets/og-image.jpg`, 폰트 2종, `/robots.txt`, `/sitemap.xml`
 - 콘솔 오류 0건 / 실패 요청 0건 / 깨진 이미지 0건
