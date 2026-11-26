@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- GATE — 오픈 준비중(2026-11-26): noindex 상태라 sitemap.xml 도 검색엔진에 쓰이지 않는다. 정식 오픈 시 robots.txt 의 Sitemap 줄과 함께 사용. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nuaroum-site.vercel.app/</loc>
+    <loc>https://nuaroum.com/</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>

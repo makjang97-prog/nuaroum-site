@@ -2,6 +2,9 @@
 (() => {
   'use strict';
 
+  /* GATE — 오픈 준비중 게이트가 켜진 일반 방문(page)에서는 카탈로그·애니메이션을 실행하지 않는다 */
+  if (document.documentElement.classList.contains('gate-on')) return;
+
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 

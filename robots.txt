@@ -1,4 +1,10 @@
+# GATE — 오픈 준비중(2026-11-26): 검색엔진 수집 차단. 정식 오픈 시 아래 두 줄을 지우고
+# "User-agent: * / Allow: /" 와 "Sitemap:" 줄을 되살린다.
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://nuaroum-site.vercel.app/sitemap.xml
+# 정식 오픈 시 되살리기:
+# User-agent: *
+# Allow: /
+#
+# Sitemap: https://nuaroum.com/sitemap.xml
